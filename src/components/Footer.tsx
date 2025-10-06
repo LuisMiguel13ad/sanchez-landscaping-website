@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Sanchez Landscaping</h3>
+            <img src="/logo.png" alt="Sanchez Landscaping logo" className="h-12 w-auto mb-4" />
             <p className="text-primary-foreground/80">
               Transforming outdoor spaces with excellence since 2015.
             </p>
@@ -39,8 +39,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>(856) 275-5073</li>
-              <li>info@sanchezlandscaping.com</li>
+              <li>(856) 628-0183</li>
+              <li>dcsanchez75@gmail.com</li>
               <li>Serving NJ, PA & DE</li>
             </ul>
           </div>

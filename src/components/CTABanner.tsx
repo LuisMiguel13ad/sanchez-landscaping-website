@@ -18,13 +18,15 @@ const CTABanner = () => {
         <p className="text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto">
           Ready to transform your yard? Get started with a free consultation today.
         </p>
-        <Button 
-          size="lg"
-          className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105"
-        >
-          Schedule Your Consultation
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        <a href="#contact">
+          <Button 
+            size="lg"
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105"
+          >
+            Schedule Your Consultation
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </a>
       </div>
     </section>
   );
