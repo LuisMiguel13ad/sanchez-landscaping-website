@@ -4,13 +4,13 @@ const Header = () => {
   return (
     <header className="w-full fixed top-0 left-0 z-40 bg-background/80 backdrop-blur-md border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-        <a href="#top" className="inline-flex items-center gap-3">
-          <img src="/logo.png" alt="Sanchez Landscaping logo" className="h-10 w-auto" />
-          <div>
-            <h1 className="text-base sm:text-xl font-bold text-foreground font-serif">
+        <a href="#top" className="inline-flex items-center gap-2 sm:gap-3">
+          <img src="/logo.png" alt="Sanchez Landscaping logo" className="h-9 sm:h-10 w-auto" />
+          <div className="flex flex-col">
+            <h1 className="text-base sm:text-xl font-bold text-foreground font-serif leading-tight whitespace-nowrap">
               Sanchez Landscaping
             </h1>
-            <p className="text-xs sm:text-sm text-muted-foreground font-serif">
+            <p className="text-sm sm:text-sm text-muted-foreground font-serif leading-tight whitespace-nowrap">
               & Hardscaping
             </p>
           </div>
