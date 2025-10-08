@@ -7,7 +7,7 @@ export const EMAILJS_CONFIG = {
   serviceId: 'service_xxxxxxx', // Your EmailJS service ID
   templateId: 'template_xxxxxxx', // Your EmailJS template ID  
   publicKey: 'xxxxxxxxxxxxxxx', // Your EmailJS public key
-  toEmail: 'dcsanchez75@gmail.com', // Your business email
+  toEmail: 'info@sanchezhardscaping.com', // Your business email
 };
 
 // Initialize EmailJS
