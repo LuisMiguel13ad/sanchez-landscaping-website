@@ -22,7 +22,7 @@ const About = () => {
             <Card className="border-border shadow-lg overflow-hidden">
               <CardContent className="p-0">
                 <img 
-                  src="/src/assets/team-photo.jpg" 
+                  src="/team-photo.jpg" 
                   alt="Sanchez Landscaping Team" 
                   className="w-full h-auto object-cover"
                 />
