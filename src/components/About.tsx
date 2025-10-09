@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Users, Award, Clock } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const About = () => {
   return (
@@ -65,64 +65,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Key Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="border-border hover:border-primary transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Users className="h-5 w-5 text-primary" />
-                    </div>
-                    <h5 className="font-semibold text-lg">Experienced Team</h5>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Our skilled professionals bring years of experience and expertise to every project.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border hover:border-primary transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Award className="h-5 w-5 text-primary" />
-                    </div>
-                    <h5 className="font-semibold text-lg">Quality Guaranteed</h5>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    We stand behind our work with comprehensive warranties and satisfaction guarantees.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border hover:border-primary transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Clock className="h-5 w-5 text-primary" />
-                    </div>
-                    <h5 className="font-semibold text-lg">Reliable Service</h5>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    From consultation to completion, we deliver projects on time and within budget.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border hover:border-primary transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <h5 className="font-semibold text-lg">Local Experts</h5>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Deep knowledge of local climate, soil conditions, and regional design preferences.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </div>
