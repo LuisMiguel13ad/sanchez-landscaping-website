@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { sendFormEmail, initializeEmailJS } from "@/lib/emailjs";
 
 const Contact = () => {
@@ -20,6 +20,7 @@ const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+  const [showSuccessAnimation, setShowSuccessAnimation] = React.useState(false);
 
   // Initialize EmailJS when component mounts
   React.useEffect(() => {
@@ -51,7 +52,7 @@ const Contact = () => {
       
       if (result.success) {
         setSubmitStatus('success');
-        alert('Thank you for your consultation request! We will contact you within 24 hours.');
+        setShowSuccessAnimation(true);
         // Reset form
         setFormData({
           name: '',
@@ -61,6 +62,10 @@ const Contact = () => {
           budget: '',
           details: ''
         });
+        // Hide animation after 4 seconds
+        setTimeout(() => {
+          setShowSuccessAnimation(false);
+        }, 4000);
       } else {
         setSubmitStatus('error');
         alert('There was an error sending your message. Please try again or call us directly.');
@@ -260,6 +265,26 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Animation Overlay */}
+      {showSuccessAnimation && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
+          <div className="bg-white rounded-2xl p-8 mx-4 max-w-md w-full text-center shadow-2xl transform animate-in zoom-in-50 duration-300">
+            <div className="mb-4">
+              <CheckCircle className="h-16 w-16 text-green-500 mx-auto animate-pulse" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              Success!
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Thank you for your consultation request! We will contact you within 24 hours.
+            </p>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="bg-green-500 h-2 rounded-full animate-pulse" style={{ width: '100%' }}></div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
