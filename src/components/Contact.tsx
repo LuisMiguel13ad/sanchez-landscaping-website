@@ -300,7 +300,7 @@ const Contact = () => {
                     <Label htmlFor="servicesRequested">Services Requested *</Label>
                     <Select value={formData.servicesRequested} onValueChange={(value) => handleSelectChange(value, 'servicesRequested')}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select the services you need" />
+                        <SelectValue placeholder="Choose: Landscaping, Hardscaping, Patio, etc." />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="landscaping">Landscaping</SelectItem>
@@ -320,7 +320,7 @@ const Contact = () => {
                     <Label htmlFor="budget">Project Budget *</Label>
                     <Select value={formData.budget} onValueChange={(value) => setFormData(prev => ({ ...prev, budget: value }))}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select your budget range" />
+                        <SelectValue placeholder="Budget: Under $5K to Over $100K" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="under-5k">Under $5,000</SelectItem>
@@ -342,7 +342,7 @@ const Contact = () => {
                       value={formData.details}
                       onChange={handleInputChange}
                       required
-                      placeholder="Please describe your project in detail. Include property size, specific requirements, timeline, and any other important information..."
+                      placeholder="Project Details: Describe your landscaping needs, property size, timeline, and any special requirements..."
                       className="w-full min-h-[120px]"
                     />
                   </div>

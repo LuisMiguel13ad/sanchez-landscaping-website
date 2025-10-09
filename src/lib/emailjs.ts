@@ -17,15 +17,22 @@ export const sendFormEmail = async (formData: {
 }) => {
   try {
     const payload = {
+      // Contact Information
       name: formData.name,
       phone: formData.phone,
       email: formData.email,
-      streetAddress: formData.streetAddress,
-      postalCode: formData.postalCode,
+      
+      // Address Information
+      address: formData.streetAddress,
+      zip: formData.postalCode,
       state: formData.state,
-      servicesRequested: formData.servicesRequested,
-      budget: formData.budget,
-      details: formData.details,
+      
+      // Service Information
+      service_type: formData.servicesRequested,
+      budget_range: formData.budget,
+      project_description: formData.details,
+      
+      // Meta Information
       source: 'Sanchez Landscaping Website',
       timestamp: new Date().toISOString(),
     };
