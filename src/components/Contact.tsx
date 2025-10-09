@@ -13,6 +13,9 @@ const Contact = () => {
     name: '',
     phone: '',
     email: '',
+    streetAddress: '',
+    postalCode: '',
+    state: '',
     projectType: '',
     budget: '',
     details: ''
@@ -35,10 +38,10 @@ const Contact = () => {
     }));
   };
 
-  const handleSelectChange = (value: string) => {
+  const handleSelectChange = (value: string, field: string) => {
     setFormData(prev => ({
       ...prev,
-      projectType: value
+      [field]: value
     }));
   };
 
@@ -58,6 +61,9 @@ const Contact = () => {
           name: '',
           phone: '',
           email: '',
+          streetAddress: '',
+          postalCode: '',
+          state: '',
           projectType: '',
           budget: '',
           details: ''
@@ -201,8 +207,98 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
+                    <Label htmlFor="streetAddress">Street Address *</Label>
+                    <Input
+                      id="streetAddress"
+                      name="streetAddress"
+                      type="text"
+                      value={formData.streetAddress}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="123 Main Street"
+                      className="w-full"
+                    />
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="postalCode">Postal Code *</Label>
+                      <Input
+                        id="postalCode"
+                        name="postalCode"
+                        type="text"
+                        value={formData.postalCode}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="08001"
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="state">State *</Label>
+                      <Select value={formData.state} onValueChange={(value) => handleSelectChange(value, 'state')}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select your state" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="NJ">New Jersey</SelectItem>
+                          <SelectItem value="PA">Pennsylvania</SelectItem>
+                          <SelectItem value="DE">Delaware</SelectItem>
+                          <SelectItem value="NY">New York</SelectItem>
+                          <SelectItem value="CT">Connecticut</SelectItem>
+                          <SelectItem value="MD">Maryland</SelectItem>
+                          <SelectItem value="VA">Virginia</SelectItem>
+                          <SelectItem value="WV">West Virginia</SelectItem>
+                          <SelectItem value="OH">Ohio</SelectItem>
+                          <SelectItem value="MA">Massachusetts</SelectItem>
+                          <SelectItem value="VT">Vermont</SelectItem>
+                          <SelectItem value="NH">New Hampshire</SelectItem>
+                          <SelectItem value="ME">Maine</SelectItem>
+                          <SelectItem value="RI">Rhode Island</SelectItem>
+                          <SelectItem value="AL">Alabama</SelectItem>
+                          <SelectItem value="AK">Alaska</SelectItem>
+                          <SelectItem value="AZ">Arizona</SelectItem>
+                          <SelectItem value="AR">Arkansas</SelectItem>
+                          <SelectItem value="CA">California</SelectItem>
+                          <SelectItem value="CO">Colorado</SelectItem>
+                          <SelectItem value="FL">Florida</SelectItem>
+                          <SelectItem value="GA">Georgia</SelectItem>
+                          <SelectItem value="HI">Hawaii</SelectItem>
+                          <SelectItem value="ID">Idaho</SelectItem>
+                          <SelectItem value="IL">Illinois</SelectItem>
+                          <SelectItem value="IN">Indiana</SelectItem>
+                          <SelectItem value="IA">Iowa</SelectItem>
+                          <SelectItem value="KS">Kansas</SelectItem>
+                          <SelectItem value="KY">Kentucky</SelectItem>
+                          <SelectItem value="LA">Louisiana</SelectItem>
+                          <SelectItem value="MI">Michigan</SelectItem>
+                          <SelectItem value="MN">Minnesota</SelectItem>
+                          <SelectItem value="MS">Mississippi</SelectItem>
+                          <SelectItem value="MO">Missouri</SelectItem>
+                          <SelectItem value="MT">Montana</SelectItem>
+                          <SelectItem value="NE">Nebraska</SelectItem>
+                          <SelectItem value="NV">Nevada</SelectItem>
+                          <SelectItem value="NC">North Carolina</SelectItem>
+                          <SelectItem value="ND">North Dakota</SelectItem>
+                          <SelectItem value="OK">Oklahoma</SelectItem>
+                          <SelectItem value="OR">Oregon</SelectItem>
+                          <SelectItem value="SC">South Carolina</SelectItem>
+                          <SelectItem value="SD">South Dakota</SelectItem>
+                          <SelectItem value="TN">Tennessee</SelectItem>
+                          <SelectItem value="TX">Texas</SelectItem>
+                          <SelectItem value="UT">Utah</SelectItem>
+                          <SelectItem value="WA">Washington</SelectItem>
+                          <SelectItem value="WI">Wisconsin</SelectItem>
+                          <SelectItem value="WY">Wyoming</SelectItem>
+                          <SelectItem value="DC">Washington DC</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
                     <Label htmlFor="projectType">Project Type *</Label>
-                    <Select value={formData.projectType} onValueChange={handleSelectChange}>
+                    <Select value={formData.projectType} onValueChange={(value) => handleSelectChange(value, 'projectType')}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select your project type" />
                       </SelectTrigger>
