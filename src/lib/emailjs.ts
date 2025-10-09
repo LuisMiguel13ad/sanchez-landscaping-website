@@ -1,21 +1,9 @@
-import emailjs from '@emailjs/browser';
-
-// EmailJS configuration
-// You'll need to get these from your EmailJS account
-export const EMAILJS_CONFIG = {
-  // These are placeholder values - you'll need to replace with your actual EmailJS credentials
-  serviceId: 'service_xxxxxxx', // Your EmailJS service ID
-  templateId: 'template_xxxxxxx', // Your EmailJS template ID  
-  publicKey: 'xxxxxxxxxxxxxxx', // Your EmailJS public key
-  toEmail: 'info@sanchezhardscaping.com', // Your business email
+// Webhook configuration for lead connector
+export const WEBHOOK_CONFIG = {
+  url: 'https://services.leadconnectorhq.com/hooks/xxq6v6nCypumXhCHTeFc/webhook-trigger/8fefa634-2b4f-43fa-a2a3-cf2d57efcc86',
 };
 
-// Initialize EmailJS
-export const initializeEmailJS = () => {
-  emailjs.init(EMAILJS_CONFIG.publicKey);
-};
-
-// Send form email
+// Send form data to webhook
 export const sendFormEmail = async (formData: {
   name: string;
   phone: string;
@@ -25,26 +13,40 @@ export const sendFormEmail = async (formData: {
   details: string;
 }) => {
   try {
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
+    const payload = {
+      name: formData.name,
       phone: formData.phone,
-      project_type: formData.projectType,
+      email: formData.email,
+      projectType: formData.projectType,
       budget: formData.budget,
       details: formData.details,
-      to_email: EMAILJS_CONFIG.toEmail,
+      source: 'Sanchez Landscaping Website',
+      timestamp: new Date().toISOString(),
     };
 
-    const result = await emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.templateId,
-      templateParams
-    );
+    const response = await fetch(WEBHOOK_CONFIG.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
 
-    console.log('Email sent successfully:', result);
-    return { success: true, result };
+    if (response.ok) {
+      console.log('Form submitted successfully:', response);
+      return { success: true, result: response };
+    } else {
+      console.error('Webhook request failed:', response.status, response.statusText);
+      return { success: false, error: `HTTP ${response.status}: ${response.statusText}` };
+    }
   } catch (error) {
-    console.error('Failed to send email:', error);
-    return { success: false, error };
+    console.error('Failed to send form data:', error);
+    return { success: false, error: error };
   }
+};
+
+// Initialize function (kept for compatibility)
+export const initializeEmailJS = () => {
+  // No initialization needed for webhook
+  console.log('Webhook integration ready');
 };
