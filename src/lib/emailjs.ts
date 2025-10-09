@@ -11,7 +11,7 @@ export const sendFormEmail = async (formData: {
   streetAddress: string;
   postalCode: string;
   state: string;
-  projectType: string;
+  servicesRequested: string;
   budget: string;
   details: string;
 }) => {
@@ -23,7 +23,7 @@ export const sendFormEmail = async (formData: {
       streetAddress: formData.streetAddress,
       postalCode: formData.postalCode,
       state: formData.state,
-      projectType: formData.projectType,
+      servicesRequested: formData.servicesRequested,
       budget: formData.budget,
       details: formData.details,
       source: 'Sanchez Landscaping Website',

@@ -16,7 +16,7 @@ const Contact = () => {
     streetAddress: '',
     postalCode: '',
     state: '',
-    projectType: '',
+    servicesRequested: '',
     budget: '',
     details: ''
   });
@@ -64,7 +64,7 @@ const Contact = () => {
           streetAddress: '',
           postalCode: '',
           state: '',
-          projectType: '',
+          servicesRequested: '',
           budget: '',
           details: ''
         });
@@ -297,10 +297,10 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="projectType">Project Type *</Label>
-                    <Select value={formData.projectType} onValueChange={(value) => handleSelectChange(value, 'projectType')}>
+                    <Label htmlFor="servicesRequested">Services Requested *</Label>
+                    <Select value={formData.servicesRequested} onValueChange={(value) => handleSelectChange(value, 'servicesRequested')}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select your project type" />
+                        <SelectValue placeholder="Select the services you need" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="landscaping">Landscaping</SelectItem>
