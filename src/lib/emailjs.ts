@@ -1,6 +1,6 @@
 // Webhook configuration for lead connector
 export const WEBHOOK_CONFIG = {
-  url: 'https://services.leadconnectorhq.com/hooks/xxq6v6nCypumXhCHTeFc/webhook-trigger/8fefa634-2b4f-43fa-a2a3-cf2d57efcc86',
+  url: 'https://services.leadconnectorhq.com/hooks/xxq6v6nCypumXhCHTeFc/webhook-trigger/11dd5b37-e353-4fc9-ab95-a20b33a4a637',
 };
 
 // Send form data to webhook
