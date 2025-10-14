@@ -31,5 +31,5 @@ const MaintenancePage = () => (
 );
 
 // Toggle between maintenance page and normal app
-createRoot(document.getElementById("root")!).render(<MaintenancePage />);
-// createRoot(document.getElementById("root")!).render(<App />);
+// createRoot(document.getElementById("root")!).render(<MaintenancePage />);
+createRoot(document.getElementById("root")!).render(<App />);
